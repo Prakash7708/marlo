@@ -39,7 +39,7 @@ app.use(
 //   }
 // };
 
-let Manadoryvalues = function (req, res, next) {
+let mandatoryValues = function (req, res, next) {
   if(req.body){
     
     if(req.body.firstname){
@@ -64,7 +64,7 @@ let Manadoryvalues = function (req, res, next) {
   }
 
 }
-app.post("/register",Manadoryvalues, async function (req, res) {
+app.post("/register",mandatoryValues, async function (req, res) {
   try {
     const connection = await mongoClient.connect(URL);
     const db = connection.db("marlo");
